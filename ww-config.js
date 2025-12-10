@@ -63,6 +63,183 @@ export default {
         { name: 'keyup', label: { en: 'On key up' }, event: null },
     ],
     properties: {
+        daisyTheme: {
+            label: { en: 'DaisyUI Theme', fr: 'Thème DaisyUI' },
+            type: 'TextSelect',
+            section: 'settings',
+            options: {
+                options: [
+                    { value: 'light', label: 'Light' },
+                    { value: 'dark', label: 'Dark' },
+                    { value: 'cupcake', label: 'Cupcake' },
+                    { value: 'bumblebee', label: 'Bumblebee' },
+                    { value: 'emerald', label: 'Emerald' },
+                    { value: 'corporate', label: 'Corporate' },
+                    { value: 'synthwave', label: 'Synthwave' },
+                    { value: 'retro', label: 'Retro' },
+                    { value: 'cyberpunk', label: 'Cyberpunk' },
+                    { value: 'valentine', label: 'Valentine' },
+                    { value: 'halloween', label: 'Halloween' },
+                    { value: 'garden', label: 'Garden' },
+                    { value: 'forest', label: 'Forest' },
+                    { value: 'aqua', label: 'Aqua' },
+                    { value: 'lofi', label: 'Lo-Fi' },
+                    { value: 'pastel', label: 'Pastel' },
+                    { value: 'fantasy', label: 'Fantasy' },
+                    { value: 'wireframe', label: 'Wireframe' },
+                    { value: 'black', label: 'Black' },
+                    { value: 'luxury', label: 'Luxury' },
+                    { value: 'dracula', label: 'Dracula' },
+                    { value: 'cmyk', label: 'CMYK' },
+                    { value: 'autumn', label: 'Autumn' },
+                    { value: 'business', label: 'Business' },
+                    { value: 'acid', label: 'Acid' },
+                    { value: 'lemonade', label: 'Lemonade' },
+                    { value: 'night', label: 'Night' },
+                    { value: 'coffee', label: 'Coffee' },
+                    { value: 'winter', label: 'Winter' },
+                ],
+            },
+            defaultValue: 'light',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'A string that defines the DaisyUI theme name',
+            },
+            propertyHelp: 'Select a built-in DaisyUI theme or bind a custom theme object',
+            /* wwEditor:end */
+        },
+        customTheme: {
+            label: { en: 'Custom Theme (overrides theme selection)', fr: 'Thème personnalisé (remplace la sélection)' },
+            type: 'Object',
+            section: 'settings',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'object',
+                tooltip: 'An object containing DaisyUI theme color variables',
+            },
+            propertyHelp: 'Bind a WeWeb variable with custom theme colors. When bound, this overrides the theme selection.',
+            /* wwEditor:end */
+        },
+        daisyColorVariant: {
+            label: { en: 'Color Variant', fr: 'Variante de couleur' },
+            type: 'TextSelect',
+            section: 'settings',
+            options: {
+                options: [
+                    { value: 'primary', label: 'Primary' },
+                    { value: 'secondary', label: 'Secondary' },
+                    { value: 'accent', label: 'Accent' },
+                    { value: 'neutral', label: 'Neutral' },
+                    { value: 'info', label: 'Info' },
+                    { value: 'success', label: 'Success' },
+                    { value: 'warning', label: 'Warning' },
+                    { value: 'error', label: 'Error' },
+                    { value: 'ghost', label: 'Ghost' },
+                ],
+            },
+            defaultValue: 'primary',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'Color variant: primary | secondary | accent | neutral | info | success | warning | error | ghost',
+            },
+            /* wwEditor:end */
+        },
+        daisySize: {
+            label: { en: 'Button Size', fr: 'Taille du bouton' },
+            type: 'TextSelect',
+            section: 'settings',
+            options: {
+                options: [
+                    { value: 'xs', label: 'Extra Small' },
+                    { value: 'sm', label: 'Small' },
+                    { value: 'md', label: 'Medium' },
+                    { value: 'lg', label: 'Large' },
+                ],
+            },
+            defaultValue: 'md',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'Button size: xs | sm | md | lg',
+            },
+            /* wwEditor:end */
+        },
+        daisyStyle: {
+            label: { en: 'Button Style', fr: 'Style du bouton' },
+            type: 'TextSelect',
+            section: 'settings',
+            options: {
+                options: [
+                    { value: 'solid', label: 'Solid' },
+                    { value: 'outline', label: 'Outline' },
+                    { value: 'ghost', label: 'Ghost' },
+                    { value: 'glass', label: 'Glass' },
+                    { value: 'link', label: 'Link' },
+                ],
+            },
+            defaultValue: 'solid',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'Button style: solid | outline | ghost | glass | link',
+            },
+            /* wwEditor:end */
+        },
+        daisyRounded: {
+            label: { en: 'Border Radius', fr: 'Arrondi des bords' },
+            type: 'TextSelect',
+            section: 'settings',
+            options: {
+                options: [
+                    { value: 'none', label: 'None' },
+                    { value: 'sm', label: 'Small' },
+                    { value: 'md', label: 'Medium' },
+                    { value: 'lg', label: 'Large' },
+                    { value: 'full', label: 'Full' },
+                ],
+            },
+            defaultValue: 'md',
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'Border radius: none | sm | md | lg | full',
+            },
+            /* wwEditor:end */
+        },
+        daisyShadow: {
+            label: { en: 'Shadow', fr: 'Ombre' },
+            type: 'OnOff',
+            section: 'settings',
+            defaultValue: false,
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'boolean',
+                tooltip: 'Enable shadow effect',
+            },
+            /* wwEditor:end */
+        },
+        daisyAnimation: {
+            label: { en: 'Animation on Click', fr: 'Animation au clic' },
+            type: 'OnOff',
+            section: 'settings',
+            defaultValue: true,
+            bindable: true,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'boolean',
+                tooltip: 'Enable click animation effect',
+            },
+            /* wwEditor:end */
+        },
         backgroundColor: {
             label: {
                 en: 'Text Background',
